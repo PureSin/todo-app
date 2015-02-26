@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "description": "task management app",
   "main": "index.js",
-  "repository" :
-  { 
-  	"type" : "git"
-  , "url" : "https://github.com/PureSin/todo-app.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PureSin/todo-app.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "kelvin ma",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
+    "react": "^0.12.2",
+    "reactify": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  }
 }
