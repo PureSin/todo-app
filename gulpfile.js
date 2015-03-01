@@ -1,4 +1,3 @@
-
 // Load some modules which are installed through NPM.
 var gulp = require('gulp');
 var browserify = require('browserify');  // Bundles JS.
@@ -7,14 +6,17 @@ var source = require('vinyl-source-stream');
  
 // Define some paths.
 var paths = {
-  app_js: ['./src/js/app.jsx'],
   js: ['src/js/*.*'],
 };
   
 // Our JS task. It will Browserify our code and compile React JSX files.
 gulp.task('js', function() {
   // Browserify/bundle the JS.
-  browserify(paths.app_js)
+  return browserify({
+        entries: ['./src/js/app.jsx'],
+        extensions: ['.jsx'],
+        paths: ['./node_modules','./src/js/']
+    })
     .transform(reactify)
     .bundle()
     .pipe(source('bundle.js'))
